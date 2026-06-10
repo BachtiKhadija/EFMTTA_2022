@@ -1,0 +1,6 @@
+name: device0-price : 291
+name: device1-price : 395
+name: device2-price : 117
+name: device3-price : 133
+
+another new line
