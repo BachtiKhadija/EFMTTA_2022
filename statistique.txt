@@ -1,0 +1,4 @@
+2010 aitmelloul 30000;
+2010 inzegane 50000;
+2012 safi 30000;
+2015 tiznit 10000;
