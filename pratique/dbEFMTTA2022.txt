@@ -1,0 +1,7 @@
+#create table filiere(code int primary key AUTO_INCREMENT,nom varchar(20),nbrGroupe int)
+#insert into filiere(nom,nbrGroupe) values('dev',2),('ID',2),('GM',4)
+#create table stagiaire(code int primary key AUTO_INCREMENT,nom varchar(20),dateNaissance date,photo varchar(30),codeF int,foreign key(codeF) references filiere(code))
+
+#insert into stagiaire(nom,dateNaissance,photo,codeF) values('stg1','2012-01-12',null,1),('stg2','2011-01-12',null,1),('stg3','2005-01-12',null,2),('stg4','2003-01-12',null,3)
+#create table admin(login varchar(20) primary key,nom varchar(20),password varchar(20))
+insert into admin(login,nom,password) values('a@email.com',"Admin","123456")

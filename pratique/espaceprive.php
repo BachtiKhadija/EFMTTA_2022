@@ -7,7 +7,7 @@ $ch=date("H");
 $sal=($ch>18)?"bonsoir":"bonjour";
 $msg=$sal." ".$nomAdmin;
 //QC.2
-$sql="select s.nom as nomStg,s.dateNaissance,s.photo,f.nom as nomF from stagiaire s inner join filiere f on s.codeF=f.code";
+$sql="select s.code,s.nom as nomStg,s.dateNaissance,s.photo,f.nom as nomF from stagiaire s inner join filiere f on s.codeF=f.code";
 $stm=$cnx->prepare($sql);
 $stm->execute();
 $stagiaires=$stm->fetchAll(PDO::FETCH_ASSOC);
@@ -29,6 +29,14 @@ $stagiaires=$stm->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <h2><?=$msg?> </h2>
     <h2>Liste stagiaire</h2>
+    <p>
+      <a href="ajouter.php">Ajouter Nouveau</a>
+
+    </p>
+     <p>
+      <a href="logout.php">se deconnecter</a>
+      
+    </p>
     <table><thead><tr>
         <th>nomSgt</th><th>dateNaissance</th><th>photo</th><th>nomF</th><th>Actions</th>
     </tr></thead>
@@ -36,7 +44,10 @@ $stagiaires=$stm->fetchAll(PDO::FETCH_ASSOC);
     <?php 
      foreach($stagiaires as $s){
 
-echo"<tr><td>".$s["nomStg"]."</td><td>".$s["dateNaissance"]."</td><td><img src='".$s["photo"]."'/></td><td>".$s["nomF"]."</td><td>Actions</td></tr>";
+echo"<tr><td>".$s["nomStg"]."</td><td>".$s["dateNaissance"]."</td><td><img src='".$s["photo"]."'/></td><td>".$s["nomF"]."</td><td>
+<a href='modifier.php?code=".$s["code"]."'>Modifier</a>
+<a href='supprimer.php?code=".$s["code"]."'>Supprimer</a>
+</td></tr>";
 
 
 
