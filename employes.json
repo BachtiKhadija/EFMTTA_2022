@@ -1,0 +1,12 @@
+[{
+    "id":1,
+    "nom":"emp1",
+    "poste":"IT",
+    "salaire":2000
+},
+{
+    "id":2,
+    "nom":"emp1",
+    "poste":"IT",
+    "salaire":2000
+}]
